@@ -1,4 +1,4 @@
-# crypto_template
+# X Day Trade APP
 
 A new Flutter project.
 
