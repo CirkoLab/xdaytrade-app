@@ -21,7 +21,6 @@ class _T4_walletState extends State<T4_wallet> {
           children: <Widget>[
             Stack(
               children: <Widget>[
-
                 ///
                 /// Create wave appbar
                 ///
@@ -76,10 +75,12 @@ class _T4_walletState extends State<T4_wallet> {
             /// Credit card header slider
             ///
             CarouselSlider(
-              aspectRatio: 9 / 10,
-              autoPlay: true,
-              viewportFraction: 0.93,
-              height: 200.0,
+              options: CarouselOptions(
+                aspectRatio: 5 / 10,
+                autoPlay: true,
+                viewportFraction: 1.0,
+                height: 220.0,
+              ),
               items: [0, 1, 2].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
@@ -406,7 +407,7 @@ class _T4_walletState extends State<T4_wallet> {
   }
 
   ///
-  /// Create triangle 
+  /// Create triangle
   ///
   Widget _triangle(double top, left) {
     return Padding(
@@ -422,7 +423,6 @@ class _T4_walletState extends State<T4_wallet> {
     );
   }
 }
-
 
 ///
 /// Create wave appbar
@@ -454,7 +454,6 @@ class BottomWaveClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
-
 
 ///
 /// Create triangle clipper

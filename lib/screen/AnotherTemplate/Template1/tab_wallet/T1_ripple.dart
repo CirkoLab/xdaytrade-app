@@ -17,15 +17,16 @@ class _T1_rippleState extends State<T1_ripple> {
           Padding(
             padding: const EdgeInsets.only(top: 5.0),
 
-
             ///
             /// Credit Card slider
-            /// 
+            ///
             child: CarouselSlider(
-              aspectRatio: 5 / 10,
-              autoPlay: true,
-              viewportFraction: 1.0,
-              height: 220.0,
+              options: CarouselOptions(
+                aspectRatio: 5 / 10,
+                autoPlay: true,
+                viewportFraction: 1.0,
+                height: 220.0,
+              ),
               items: [0, 1, 2, 3, 4].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
@@ -66,8 +67,6 @@ class _T1_rippleState extends State<T1_ripple> {
             ),
           ),
 
-
-
           ///
           /// List transaction
           ///
@@ -81,9 +80,6 @@ class _T1_rippleState extends State<T1_ripple> {
       ),
     );
   }
-
-
-
 
   ///
   /// Widget card transaction
@@ -161,9 +157,6 @@ class _T1_rippleState extends State<T1_ripple> {
       ),
     );
   }
-
-
-
 
   ///
   /// Widget credit card transaction

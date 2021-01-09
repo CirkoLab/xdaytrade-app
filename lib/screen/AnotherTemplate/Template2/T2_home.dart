@@ -30,17 +30,18 @@ class _T2_homeState extends State<T2_home> {
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
-
                 ///
                 /// Image slider top
                 ///
                 Padding(
                   padding: const EdgeInsets.only(top: 105.0),
                   child: CarouselSlider(
-                    aspectRatio: 9 / 10,
-                    autoPlay: true,
-                    viewportFraction: 0.93,
-                    height: 220.0,
+                    options: CarouselOptions(
+                      aspectRatio: 5 / 10,
+                      autoPlay: true,
+                      viewportFraction: 1.0,
+                      height: 220.0,
+                    ),
                     items: [0, 1, 2, 3, 4].map((i) {
                       return Builder(
                         builder: (BuildContext context) {
@@ -72,7 +73,7 @@ class _T2_homeState extends State<T2_home> {
                 ),
 
                 ///
-                /// Card 
+                /// Card
                 ///
                 _card(Colors.lightBlueAccent, "Cinema Ticket", "PM 21:22",
                     "\$19.00"),
@@ -312,9 +313,9 @@ Widget line(double width) {
   );
 }
 
-/// 
+///
 /// item widget for drawer
-/// 
+///
 Widget itemDrawer(IconData icon, String txt) {
   return Padding(
     padding: const EdgeInsets.only(top: 30.0, left: 20.0),

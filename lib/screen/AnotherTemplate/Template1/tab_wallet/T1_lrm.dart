@@ -21,10 +21,12 @@ class _T1_lrmState extends State<T1_lrm> {
             /// Credit Card slider
             ///
             child: CarouselSlider(
-              aspectRatio: 5 / 10,
-              autoPlay: true,
-              viewportFraction: 1.0,
-              height: 220.0,
+              options: CarouselOptions(
+                aspectRatio: 5 / 10,
+                autoPlay: true,
+                viewportFraction: 1.0,
+                height: 220.0,
+              ),
               items: [0, 1, 2, 3, 4].map((i) {
                 return Builder(
                   builder: (BuildContext context) {
