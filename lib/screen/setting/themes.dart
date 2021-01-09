@@ -26,18 +26,16 @@ class ThemeBloc {
     return DemoTheme(
         'initial',
         ThemeData(
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: colorStyle.background,
-            backgroundColor: colorStyle.blackBackground,
-            dividerColor: colorStyle.iconColorDark,
-            accentColor: colorStyle.primaryColor,
-            primaryColor: colorStyle.primaryColor,
-            hintColor: colorStyle.fontSecondaryColorDark,
-            buttonColor: colorStyle.primaryColor,
-            canvasColor: colorStyle.grayBackground,
-            cardColor: colorStyle.grayBackground,
-            textSelectionColor: colorStyle.fontColorDark,
-            textSelectionHandleColor: colorStyle.fontColorDarkTitle));
+          brightness: Brightness.light,
+          accentColor: colorStyle.primaryColor,
+          primaryColor: colorStyle.primaryColor,
+          buttonColor: colorStyle.primaryColor,
+          cardColor: colorStyle.cardColorLight,
+          textSelectionColor: colorStyle.fontColorLight,
+          scaffoldBackgroundColor: Color(0xFFFDFDFD),
+          canvasColor: colorStyle.whiteBacground,
+          dividerColor: colorStyle.iconColorLight,
+          hintColor: colorStyle.fontSecondaryColorLight,
+        ));
   }
 }
-
