@@ -18,5 +18,5 @@ Map<String, dynamic> _$PromoteToJson(Promote instance) => <String, dynamic>{
       'people': instance.people,
       'usdt_reward_sum': instance.usdt_reward_sum,
       'people_space': instance.people_space,
-      'order_list': instance.order_list
+      'order_list': instance.order_list,
     };

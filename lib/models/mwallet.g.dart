@@ -21,5 +21,5 @@ Map<String, dynamic> _$MwalletToJson(Mwallet instance) => <String, dynamic>{
       'market_wallet_fil': instance.market_wallet_fil,
       'market_wallet_lamb': instance.market_wallet_lamb,
       'market_reward_space_num': instance.market_reward_space_num,
-      'market_relate_total_space_num': instance.market_relate_total_space_num
+      'market_relate_total_space_num': instance.market_relate_total_space_num,
     };

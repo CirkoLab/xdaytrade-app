@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:crypto_template/api_client.dart';
 import 'package:crypto_template/app_global.dart';
 import 'package:crypto_template/component/style.dart';
+import 'package:crypto_template/global.dart';
 import 'package:crypto_template/models/index.dart';
 import 'package:crypto_template/screen/Bottom_Nav_Bar/bottom_nav_bar.dart';
 import 'package:crypto_template/screen/intro/signup.dart';
@@ -102,7 +103,8 @@ class _loginState extends State<login> {
                                     child: TextFormField(
                                       validator: (input) {
                                         if (input.isEmpty) {
-                                          return '请输入手机号 ';
+                                          return AppLocalizations.t(
+                                              'login.telephoneHint');
                                         }
                                       },
                                       onSaved: (input) => phone = input,
@@ -126,7 +128,8 @@ class _loginState extends State<login> {
                                           contentPadding: EdgeInsets.all(0.0),
                                           filled: true,
                                           fillColor: Colors.transparent,
-                                          labelText: '手机号',
+                                          labelText: AppLocalizations.t(
+                                              'login.telephone'),
                                           hintStyle:
                                               TextStyle(color: Colors.white),
                                           labelStyle: TextStyle(
@@ -169,7 +172,8 @@ class _loginState extends State<login> {
                                     child: TextFormField(
                                       validator: (input) {
                                         if (input.isEmpty) {
-                                          return '请输入密码';
+                                          return AppLocalizations.t(
+                                              'login.passwordHint');
                                         }
                                       },
                                       onSaved: (input) => password = input,
@@ -194,7 +198,8 @@ class _loginState extends State<login> {
                                           contentPadding: EdgeInsets.all(0.0),
                                           filled: true,
                                           fillColor: Colors.transparent,
-                                          labelText: '密码',
+                                          labelText: AppLocalizations.t(
+                                              'login.password'),
                                           hintStyle:
                                               TextStyle(color: Colors.white),
                                           labelStyle: TextStyle(
@@ -255,7 +260,7 @@ class _loginState extends State<login> {
                             ),
                             child: Center(
                               child: Text(
-                                "登入",
+                                AppLocalizations.t('login.loginBtn'),
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w400,
@@ -292,7 +297,7 @@ class _loginState extends State<login> {
                             ),
                             child: Center(
                               child: Text(
-                                "注册账号",
+                                AppLocalizations.t('login.registerBtn'),
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w100,
@@ -324,7 +329,7 @@ class _loginState extends State<login> {
       // 链接登录接口
       _login(context);
     } else {
-      MyShowDialog(context, "手机号密码不能为空！");
+      MyShowDialog(context, AppLocalizations.t('login.telephoneHint'));
     }
   }
 
@@ -333,9 +338,9 @@ class _loginState extends State<login> {
     ApiClient client = new ApiClient();
 
     phone.isEmpty
-        ? MyShowDialog(context, "手机号不能为空!")
+        ? MyShowDialog(context, AppLocalizations.t('login.telephoneHint'))
         : password.isEmpty == ""
-            ? MyShowDialog(context, "密码不能为空！")
+            ? MyShowDialog(context, AppLocalizations.t('login.passwordHint'))
             : "";
 
     // 简单判断是否手机号不对
@@ -343,7 +348,7 @@ class _loginState extends State<login> {
     var isPhone = mobile.hasMatch(phone);
 
     if (!isPhone) {
-      MyShowDialog(context, "手机号不正确!");
+      MyShowDialog(context, AppLocalizations.t('login.telephoneError'));
       return;
     }
     await client.loginWithPhone(phone, password).then((response) {
@@ -367,7 +372,7 @@ class _loginState extends State<login> {
             showDialog(
                 context: context,
                 child: new AlertDialog(
-                  content: new Text('登录成功'),
+                  content: new Text(AppLocalizations.t('login.success')),
                   actions: <Widget>[
                     new FlatButton(
                         onPressed: () {
@@ -376,7 +381,8 @@ class _loginState extends State<login> {
                                   pageBuilder: (_, __, ___) =>
                                       bottomNavBar(themeBloc: _themeBloc)));
                         },
-                        child: new Text('好'))
+                        child: new Text(
+                            AppLocalizations.t('login.successConfirm')))
                   ],
                 ));
           } else {
@@ -389,7 +395,8 @@ class _loginState extends State<login> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: new Text('好'))
+                        child: new Text(
+                            AppLocalizations.t('login.successConfirm')))
                   ],
                 ));
           }
@@ -404,7 +411,7 @@ class _loginState extends State<login> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: new Text('好'))
+                    child: new Text(AppLocalizations.t('login.successConfirm')))
               ],
             ));
       }
@@ -485,7 +492,7 @@ void MyShowDialog(context, title) {
               onPressed: () {
                 Navigator.pop(context); //  点击返回上一级
               },
-              child: new Text("好"))
+              child: new Text(AppLocalizations.t('login.successConfirm')))
         ],
       ));
 }

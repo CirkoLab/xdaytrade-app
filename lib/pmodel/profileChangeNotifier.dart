@@ -13,6 +13,20 @@ class ProfileChangeNotifier extends ChangeNotifier {
   }
 }
 
+class LangModel extends ProfileChangeNotifier {
+  String get lang => _profile.lang;
+
+  set lang(String lang) {
+    _profile.lang = lang;
+    notifyListeners();
+  }
+
+  void changeLang(String langCode) {
+    _profile.lang = langCode;
+    notifyListeners();
+  }
+}
+
 class UserModel extends ProfileChangeNotifier {
   User get user => _profile.user;
 
@@ -21,17 +35,15 @@ class UserModel extends ProfileChangeNotifier {
 
   //用户信息发生变化，更新用户信息并通知依赖它的子孙Widgets更新
   set user(User user) {
-
     _profile.user = user;
     notifyListeners();
   }
-  void changeName(String name){
+
+  void changeName(String name) {
     _profile.user.user_name = name;
     notifyListeners();
   }
-
 }
-
 
 class WalletModel extends ProfileChangeNotifier {
   Wallet get wallet => _profile.wallet;
@@ -42,13 +54,12 @@ class WalletModel extends ProfileChangeNotifier {
     notifyListeners();
   }
 
-  void changeBalance(num change){
+  void changeBalance(num change) {
     num balance = _profile.wallet.usdt_balance;
     _profile.wallet.usdt_balance = balance + change;
     notifyListeners();
   }
 }
-
 
 class PromoteModel extends ProfileChangeNotifier {
   Promote get promote => _profile.promote;
@@ -59,7 +70,6 @@ class PromoteModel extends ProfileChangeNotifier {
     notifyListeners();
   }
 }
-
 
 //class ThemeModel extends ProfileChangeNotifier {
 //  // 获取当前主题，如果为设置主题，则默认使用蓝色主题

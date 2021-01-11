@@ -1,4 +1,4 @@
- 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'wallet.dart';
 
@@ -13,9 +13,8 @@ Wallet _$WalletFromJson(Map<String, dynamic> json) {
     ..usdt_balance = json['usdt_balance'] as num
     ..fil_balance = json['fil_balance'] as num
     ..lamb_balance = json['lamb_balance'] as num
-    ..userUserId = json['userUserId'] as String
-    ..user_space_num = json['user_space_num'] as num;
-
+    ..user_space_num = json['user_space_num'] as num
+    ..userUserId = json['userUserId'] as String;
 }
 
 Map<String, dynamic> _$WalletToJson(Wallet instance) => <String, dynamic>{

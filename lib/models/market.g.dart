@@ -33,5 +33,5 @@ Map<String, dynamic> _$MarketToJson(Market instance) => <String, dynamic>{
       'is_closed': instance.is_closed,
       'market_reward_space_num': instance.market_reward_space_num,
       'market_relate_total_space_num': instance.market_relate_total_space_num,
-      'market_wallet': instance.market_wallet
+      'market_wallet': instance.market_wallet,
     };

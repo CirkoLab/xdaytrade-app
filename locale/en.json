@@ -1,0 +1,20 @@
+{
+  "title_page": "i18n",
+  "title_appbar": "i18n",
+  "content": {
+    "currentLanguage": "The current language is English",
+    "zh": "zh",
+    "en": "en"
+  },
+  "login": {
+    "loginBtn": "Login",
+    "registerBtn": "Registration",
+    "telephone": "Telephone",
+    "password": "Password",
+    "telephoneHint": "Please input telephone",
+    "passwordHint": "Please input password",
+    "telephoneError": "Telephone number is wrong",
+    "success": "Login Successful",
+    "successConfirm": "OK"
+  }
+}

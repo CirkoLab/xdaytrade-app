@@ -1,0 +1,19 @@
+{
+  "title_page": "xdaytrade",
+  "title_appbar": "xdaytrade",
+  "content": {
+      "currentLanguage": "当前语言是中文",
+      "zh": "中文",
+      "en": "英文"
+  },
+  "login": {
+    "loginBtn": "登入",
+    "registerBtn": "注册账号",
+    "telephone": "手机号",
+    "password": "密码",
+    "telephoneHint": "请输入手机号",
+    "passwordHint": "请输入密码",
+    "success": "登入成功",
+    "successConfirm": "好"
+  }
+}
